@@ -1,0 +1,63 @@
+{
+  "name": "redux-effects-steps",
+  "version": "1.0.0",
+  "description": "Multiple steps version of redux-effects",
+  "keywords": [
+    "actions",
+    "effects",
+    "flux",
+    "fsa",
+    "middleware",
+    "redux",
+    "redux-effects"
+  ],
+  "author": "Recruit Technologies Co.,Ltd.",
+  "license": "MIT",
+  "homepage": "https://github.com/recruit-tech/redux-effects-steps",
+  "bugs": {
+    "url": "https://github.com/recruit-tech/redux-effects-steps/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/recruit-tech/redux-effects-steps.git"
+  },
+  "main": "lib/index.js",
+  "files": [
+    "lib",
+    "src"
+  ],
+  "scripts": {
+    "build": "babel src --out-dir lib",
+    "clean": "rimraf lib/*",
+    "eslint": "eslint src test",
+    "fixpack": "fixpack",
+    "jscs": "jscs src test",
+    "lint": "npm-run-all eslint jscs",
+    "test": "eater"
+  },
+  "dependencies": {
+    "is-promise": "^2.1.0"
+  },
+  "devDependencies": {
+    "active-cache-babel-register": "0.1.3",
+    "babel-cli": "6.11.4",
+    "babel-core": "6.11.4",
+    "babel-eslint": "6.1.2",
+    "babel-jscs": "3.0.0-beta1",
+    "babel-preset-es2015": "6.9.0",
+    "babel-preset-power-assert": "1.0.0",
+    "eater": "3.0.0-5",
+    "eslint": "2.13.1",
+    "eslint-config-airbnb": "9.0.1",
+    "eslint-plugin-import": "1.11.1",
+    "eslint-plugin-jsx-a11y": "1.5.3",
+    "eslint-plugin-react": "5.2.2",
+    "fixpack": "2.3.1",
+    "jscs": "2.11.0",
+    "must-call": "1.0.0",
+    "npm-run-all": "2.3.0",
+    "power-assert": "1.4.1",
+    "redux": "3.5.2",
+    "rimraf": "2.5.3"
+  }
+}

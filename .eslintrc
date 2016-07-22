@@ -1,0 +1,56 @@
+{
+  "extend": "eslint-config-airbnb",
+
+  "parserOptions": {
+    "ecmaVersion": 6,
+    "sourceType": "module"
+  },
+
+  "parser": "babel-eslint",
+
+  "env": {
+    "browser": true,
+    "node": true,
+    "mocha": true,
+    "es6": true
+  },
+
+  "plugins": [
+    "import",
+    "react"
+  ],
+
+  "rules": {
+    //Possible Errors
+    "no-console": "error",
+    "no-unexpected-multiline": "error",
+
+    // Best Practices
+    "dot-location": ["error", "property"],
+    "no-implicit-globals": "error",
+    "no-invalid-this": "error",
+    "no-unmodified-loop-condition": "error",
+    "no-useless-call": "error",
+
+    // Variables
+    "no-catch-shadow": "error",
+    "no-label-var": "error",
+    "no-undef-init": "error",
+    "no-undefined": "error",
+    "no-use-before-define": ["error", "nofunc"],
+
+    // Node.js
+    "callback-return": "error",
+    "no-path-concat": "error",
+
+    // Stylistic Issues
+    "linebreak-style": ["error", "unix"],
+
+    // ECMAScript 6
+    "arrow-parens": "error",
+    "constructor-super": "error",
+    "generator-star-spacing": ["error", "after"],
+    "no-this-before-super": "error",
+    "prefer-spread": "error"
+  }
+}
