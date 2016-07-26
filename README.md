@@ -52,7 +52,7 @@ function fetchUser({ user }) {
 ### Using actions
 
 ```javascript
-const propmise = store.dispatch(fetchUser({ user }));
+const promise = store.dispatch(fetchUser({ user }));
 ```
 
 ## Under the food
@@ -178,4 +178,4 @@ const action = steps(begin(),
 
 ##### Returns
 
-*(Promise)* A Promise that is resolved or rejected when all steps are completed.
+*(Promise)*: A Promise that is resolved or rejected when all steps are completed.
