@@ -33,7 +33,9 @@
     "fixpack": "fixpack",
     "jscs": "jscs src test",
     "lint": "npm-run-all eslint jscs",
-    "test": "eater"
+    "preversion": "npm test",
+    "test": "eater",
+    "version": "npm-run-all clean build"
   },
   "dependencies": {
     "is-promise": "^2.1.0"
