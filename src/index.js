@@ -15,12 +15,12 @@ export const EFFECT_STEPS = 'EFFECT_STEPS';
 /*
  * Action creators
  */
-export function steps(action, ...steps) {
+export function steps(action, ...stepArray) {
   return {
     type: EFFECT_STEPS,
     payload: action,
     meta: {
-      steps,
+      steps: stepArray,
     },
   };
 }
@@ -29,7 +29,9 @@ export function steps(action, ...steps) {
  * Middleware
  */
 export default function stepsMiddleware({ dispatch }) {
-  return (next) => (action) => action.type === EFFECT_STEPS ? dispatchEffect(action) : next(action);
+  return (next) => (action) => (
+    action.type === EFFECT_STEPS ? dispatchEffect(action) : next(action)
+  );
 
   function dispatchEffect(action) {
     const promise = promisify(maybeDispatch(action.payload));
@@ -50,14 +52,15 @@ export default function stepsMiddleware({ dispatch }) {
     return dispatch(action);
   }
 
-  function applySteps(promise, steps = []) {
-    return steps
-      .map((step) => Array.isArray(step) ? step : [step])
-      .reduce((promise, [success = noop, failure = reject]) =>
+  function applySteps(initialPromise, stepArray = []) {
+    return stepArray
+      .map((step) => (Array.isArray(step) ? step : [step]))
+      .reduce((promise, [success = noop, failure = reject]) => (
         promise.then(
           (val) => promisify(maybeDispatch(createAction(success, val))),
-          (err) => promisify(maybeDispatch(createAction(failure, err)))
-        ), promise);
+          (err) => promisify(maybeDispatch(createAction(failure, err))),
+        )
+      ), initialPromise);
   }
 }
 
@@ -82,7 +85,7 @@ function reject(err) {
 
 function createAction(actionOrCreator, param) {
   if (!actionOrCreator || isPromise(actionOrCreator)) {
-    return;
+    return null;
   }
 
   if (typeof actionOrCreator === 'function') {

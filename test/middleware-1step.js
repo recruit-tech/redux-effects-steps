@@ -45,7 +45,7 @@ testResolved('1 step, success, async action creator',
 
 testResolved('1 step, success, default handler',
   steps(async(sync('foo')),
-    [, assert.fail]
+    [, assert.fail] // eslint-disable-line no-sparse-arrays
   ),
   void 0,
   []

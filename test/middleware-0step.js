@@ -2,7 +2,7 @@ import { test } from 'eater/runner';
 import assert from 'assert';
 import { steps } from '../src';
 import { sync, async } from './fixtures/actionCreators';
-import { default as createStore, actions } from './fixtures/createStore';
+import createStore, { actions } from './fixtures/createStore';
 import { testResolved } from './_helpers';
 
 test('not steps action, pass through', () => {

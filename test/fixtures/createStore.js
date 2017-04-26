@@ -1,5 +1,5 @@
 import { createStore, applyMiddleware } from 'redux';
-import { default as steps } from '../../src';
+import stepsMiddleware from '../../src';
 
 export const actions = [];
 
@@ -16,11 +16,13 @@ function async({ dispatch }) {
       return next(action);
     }
 
-    return !action.payload.error ? Promise.resolve(action.payload) : Promise.reject(action.payload.payload);
+    return !action.payload.error
+      ? Promise.resolve(action.payload)
+      : Promise.reject(action.payload.payload);
   };
 }
 
 export default function () {
   return createStore(() => {
-  }, {}, applyMiddleware(steps, async, log));
+  }, {}, applyMiddleware(stepsMiddleware, async, log));
 }

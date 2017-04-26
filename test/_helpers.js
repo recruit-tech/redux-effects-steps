@@ -2,7 +2,7 @@ import { test } from 'eater/runner';
 import assert from 'assert';
 import mustCall from 'must-call';
 import isPromise from 'is-promise';
-import { default as createStore, actions } from './fixtures/createStore';
+import createStore, { actions } from './fixtures/createStore';
 
 export function testResolved(msg, action, expectedResult, expectedActions) {
   return test(msg, () => {
