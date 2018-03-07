@@ -54,6 +54,7 @@
     "comma-dangle": ["error", "always-multiline"],
     "linebreak-style": ["error", "unix"],
     "no-plusplus": "off",
+    "function-paren-newline": "off",
 
     // ECMAScript 6
     "arrow-parens": ["error", "always"],
