@@ -1,6 +1,6 @@
 {
   "name": "redux-effects-steps",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Multiple steps version of redux-effects",
   "keywords": [
     "actions",
