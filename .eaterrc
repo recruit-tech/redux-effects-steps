@@ -1,6 +1,6 @@
 {
   require: [
-    "active-cache-babel-register"
+    "babel-register"
   ],
   glob: './test/[!_]*.js'
 }
