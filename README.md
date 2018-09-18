@@ -161,21 +161,23 @@ const action = steps(begin(),
 * `origin` *(Array|Object)*
     * One of the:
         * `action` *(Object)*: A 
-          [FSA](https://github.com/acdlite/flux-standard-action#errors-as-a-first-class-concept)
+          [FSA](https://github.com/acdlite/flux-standard-action)
           compliant action object.
         * `actions` *(Array)*: An array of actions.
 * `steps` *(Array)*
     * Each element is in a `[success, failure]` tuple Array.
     * `success` and `failure` are one of the:
         * `action` *(Object)*: A
-          [FSA](https://github.com/acdlite/flux-standard-action#errors-as-a-first-class-concept)
+          [FSA](https://github.com/acdlite/flux-standard-action)
           compliant action object.
         * `actions` *(Array)*: An array of
-          [FSA](https://github.com/acdlite/flux-standard-action#errors-as-a-first-class-concept)
+          [FSA](https://github.com/acdlite/flux-standard-action)
           compliant action object.
         * `actionCreator` *(Function)*: An action creator.
     * If `failure` is not needed, you can pass just `success` instead of an Array.
 
 ##### Returns
 
-*(Promise)*: A Promise that is resolved or rejected when all steps are completed.
+*(Object)*: A
+  [FSA](https://github.com/acdlite/flux-standard-action)
+  compliant action object.
