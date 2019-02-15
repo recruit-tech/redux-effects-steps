@@ -36,13 +36,13 @@
     "version": "npm-run-all clean build"
   },
   "dependencies": {
-    "babel-preset-env": "^1.6.1",
     "is-promise": "^2.1.0"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
     "babel-eslint": "^8.2.2",
+    "babel-preset-env": "^1.6.1",
     "babel-preset-power-assert": "^2.0.0",
     "babel-register": "^6.26.0",
     "eater": "3.2.0",
