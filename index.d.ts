@@ -1,4 +1,4 @@
-import { Middleware, Store } from 'redux'
+import { Middleware, MiddlewareAPI } from 'redux'
 
 type Action<P> = {
   type: string
@@ -23,7 +23,12 @@ type PromisableFunction<A = any> = (args: A) => Promise<any>
 
 export declare const EFFECT_STEPS : 'EFFECT_STEPS'
 
-type StepItem = SuccessOrFailure | PromisableFunction | ActionCreator | Array<Promise<any> | PromisableFunction> | AnyAction
+type StepItem =
+  | SuccessOrFailure
+  | PromisableFunction
+  | ActionCreator
+  | Array<Promise<any> | PromisableFunction>
+  | AnyAction
 
 export declare type StepAction<A = AnyAction> = {
   type: typeof EFFECT_STEPS
@@ -40,4 +45,4 @@ export declare function steps<R = any>(
   ]
 ): StepAction
 
-export default function<S = any>(store: Store<S>): ReturnType<Middleware>
+export default function<S = any>(store: MiddlewareAPI<any>): ReturnType<Middleware>
